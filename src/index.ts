@@ -26,7 +26,7 @@ export async function connect (config: ConnectConfig): Promise<Near> {
   const jwtBody = `${encode(header)}.${encode(payload)}`;
   const sig = keyPair.sign(Buffer.from(jwtBody));
 
-  const token = `${jwtBody}.${Buffer.from(sig.signature).toString('base64')}`
+  const token = `${jwtBody}.${base64url.encode(Buffer.from(sig.signature))}`
   console.log('jwt token', token);
 
   config.headers = config.headers || {};
