@@ -19,7 +19,6 @@
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
-  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -31,7 +30,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "rocket-api-js",
+  "name": "rocket-near-api-js",
   "author": "Daniel Wang",
   "module": "dist/rocket-api-js.esm.js",
   "size-limit": [
@@ -53,6 +52,7 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
+    "base64url": "^3.0.1",
     "near-api-js": "^1.1.0"
   }
 }

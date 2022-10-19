@@ -1,4 +1,5 @@
 import { connect as nearConnect, Near, ConnectConfig, keyStores } from 'near-api-js';
+import base64url from 'base64url';
 
 export async function connect (config: ConnectConfig): Promise<Near> {
   // if the user is logged in and there a private key in local storage,
@@ -35,5 +36,5 @@ export async function connect (config: ConnectConfig): Promise<Near> {
 }
 
 function encode (o: object): string {
-  return Buffer.from(JSON.stringify(o)).toString('base64');
+  return base64url.encode(JSON.stringify(o));
 }
